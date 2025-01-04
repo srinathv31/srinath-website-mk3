@@ -76,9 +76,9 @@ export function TeamSelect({
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0">
         <Command>
-          <CommandInput placeholder="Search year..." />
+          <CommandInput placeholder="Search team..." />
           <CommandList>
-            <CommandEmpty>No year found.</CommandEmpty>
+            <CommandEmpty>No team found.</CommandEmpty>
             <CommandGroup>
               {teamList.map((team) => (
                 <CommandItem

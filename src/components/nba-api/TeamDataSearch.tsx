@@ -5,10 +5,13 @@ import { Button } from "../ui/button";
 import { TeamSelect } from "./TeamSelect";
 import { YearSelect } from "./YearSelect";
 import { useState } from "react";
+import { useParams } from "next/navigation";
 
 export default function TeamDataSearch() {
-  const [team, setTeam] = useState("");
-  const [year, setYear] = useState("");
+  const params = useParams<{ team: string; year: string }>();
+
+  const [team, setTeam] = useState(decodeURIComponent(params.team));
+  const [year, setYear] = useState(params.year);
 
   return (
     <div className="flex gap-4 my-4">
