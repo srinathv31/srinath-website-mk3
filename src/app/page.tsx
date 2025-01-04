@@ -11,7 +11,10 @@ export default function Home() {
         something useful here. These days, I mostly work with React and Next.js,
         so expect content related to those technologies.
       </p>
-      <SocialLinks />
+      <div className="flex gap-2 items-center">
+        <p>Social Links:</p>
+        <SocialLinks />
+      </div>
     </div>
   );
 }

@@ -22,8 +22,7 @@ export default function SocialLinks() {
   ];
 
   return (
-    <div className="flex gap-2 items-center">
-      <p>Social Links:</p>
+    <>
       {socialLinks.map((link, index) => (
         <a
           key={index}
@@ -44,6 +43,6 @@ export default function SocialLinks() {
           </svg>
         </a>
       ))}
-    </div>
+    </>
   );
 }
