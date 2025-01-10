@@ -28,7 +28,7 @@ export function YearSelect({
 }) {
   const [open, setOpen] = React.useState(false);
 
-  const yearList = Array.from({ length: 46 }, (_, i) => i + 1977 + "");
+  const yearList = Array.from({ length: 46 }, (_, i) => 2022 - i + "");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
