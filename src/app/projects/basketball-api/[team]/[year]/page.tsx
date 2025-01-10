@@ -21,7 +21,12 @@ export default async function TeamDataPage({
           {year} {decodeURIComponent(team)}
         </p>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-center">
+        <ErrorBoundary fallback={<p>Error ❌</p>}>
+          <Suspense fallback={<p>Loading...</p>}>
+            <PlayerList promise={data} />
+          </Suspense>
+        </ErrorBoundary>
         <div>
           <ErrorBoundary fallback={<p>Error ❌</p>}>
             <Suspense fallback={<p>Loading...</p>}>
@@ -42,11 +47,6 @@ export default async function TeamDataPage({
             </Suspense>
           </ErrorBoundary>
         </div>
-        <ErrorBoundary fallback={<p>Error ❌</p>}>
-          <Suspense fallback={<p>Loading...</p>}>
-            <PlayerList promise={data} />
-          </Suspense>
-        </ErrorBoundary>
       </div>
     </div>
   );

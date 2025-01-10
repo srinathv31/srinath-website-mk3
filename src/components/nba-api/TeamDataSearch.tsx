@@ -10,7 +10,9 @@ import { useParams } from "next/navigation";
 export default function TeamDataSearch() {
   const params = useParams<{ team: string; year: string }>();
 
-  const [team, setTeam] = useState(decodeURIComponent(params.team));
+  const initialTeam = params.team ? decodeURIComponent(params.team) : "";
+
+  const [team, setTeam] = useState(initialTeam);
   const [year, setYear] = useState(params.year);
 
   return (

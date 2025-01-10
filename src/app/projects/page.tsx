@@ -1,4 +1,6 @@
 import SocialLinks from "@/components/SocialLinks";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -11,6 +13,11 @@ export default function Projects() {
         something useful here. These days, I mostly work with React and Next.js,
         so expect content related to those technologies.
       </p>
+      <div className="flex gap-2 items-center">
+        <Button asChild>
+          <Link href="/projects/basketball-api">NBA API</Link>
+        </Button>
+      </div>
       <div className="flex gap-2 items-center">
         <p>Social Links:</p>
         <SocialLinks />
