@@ -16,12 +16,21 @@ export default function PlayerList({
   return (
     <div>
       <h1>Player List</h1>
-      {Object.entries(data.Roster.players).map(([name, stats]) => (
-        <div key={name}>
-          <p>{name}</p>
-          <p>{stats.PER}</p>
-        </div>
-      ))}
+      <div className="h-screen overflow-y-scroll">
+        {Object.entries(data.Roster.players)
+          .sort((a, b) => +b[1].PER - +a[1].PER)
+          .map(([name, stats]) => (
+            <div
+              key={name}
+              className="flex flex-col justify-between p-8 border border-black my-3 rounded"
+            >
+              <p>{name}</p>
+              <p>
+                G: {stats.G} | PER: {stats.PER} | TS%: {stats["TS%"]}
+              </p>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
